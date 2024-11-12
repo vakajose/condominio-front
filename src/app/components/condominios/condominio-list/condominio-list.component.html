@@ -1,0 +1,33 @@
+<div class="condominios-grid">
+  <p-card *ngFor="let condominio of condominios" class="condominio-card">
+    <ng-template pTemplate="header">
+      <h2>{{ condominio.nombre }}</h2>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <p>{{ condominio.direccion }}</p>
+    </ng-template>
+  </p-card>
+
+  <!-- Tarjeta de creación de condominio -->
+  <p-card class="condominio-card create-card" (click)="openNewCondominioModal()">
+    <ng-template pTemplate="content">
+      <button pButton icon="pi pi-plus" label="Crear Condominio"></button>
+    </ng-template>
+  </p-card>
+
+  <!-- Modal para crear nuevo condominio -->
+  <p-dialog header="Crear Nuevo Condominio" [(visible)]="displayModal" modal="true" [closable]="true">
+    <div class="field">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" pInputText [(ngModel)]="newCondominio.nombre" />
+    </div>
+    <div class="field">
+      <label for="direccion">Dirección</label>
+      <input id="direccion" type="text" pInputText [(ngModel)]="newCondominio.direccion" />
+    </div>
+    <p-footer>
+      <button pButton label="Guardar" icon="pi pi-check" (click)="saveCondominio()"></button>
+      <button pButton label="Cancelar" icon="pi pi-times" class="p-button-secondary" (click)="displayModal = false"></button>
+    </p-footer>
+  </p-dialog>
+</div>

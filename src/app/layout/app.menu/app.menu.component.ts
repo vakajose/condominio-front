@@ -18,7 +18,10 @@ export class AppMenuComponent  implements OnInit{
   constructor(public app: AppComponent, public appMain: AppMainComponent) {}
 
   ngOnInit() {
-    this.model = [];
+    this.model = [
+
+
+    ];
   }
   onMenuClick() {
     this.appMain.menuClick = true;

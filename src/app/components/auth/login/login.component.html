@@ -1,0 +1,44 @@
+<div class="login-body">
+  <div class="login-panel p-fluid">
+    <div class="login-panel-header">
+      <img src="assets/layout/images/logo-slim.png" alt="Logo">
+    </div>
+    <div class="login-panel-content">
+      <div class="grid">
+        <div class="col-12">
+          <h1>Sign-in to Serenity Network</h1>
+        </div>
+
+        <div class="col-12" >
+          <form (ngSubmit)="onLogin()">
+            <div class="col-12">
+            <span class="p-float-label">
+              <input type="text" pInputText [(ngModel)]="credentials.username" name="username" id="username" required>
+              <label for="username">Username</label>
+            </span>
+            </div>
+
+            <div class="col-12">
+            <span class="p-float-label">
+              <input type="password" pInputText [(ngModel)]="credentials.password" name="password" id="password" required>
+              <label for="password">Password</label>
+            </span>
+            </div>
+
+            <div class="col-12">
+              <button pButton type="submit" label="Sign In" icon="pi pi-user"></button>
+            </div>
+          </form>
+        </div>
+
+<!--        <div class="col-12" *ngIf="errorMessage" class="error-message">-->
+<!--          {{ errorMessage }}-->
+<!--        </div>-->
+
+        <div class="col-12">
+          Don't have an account? <a href="#">Sign Up</a> now.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

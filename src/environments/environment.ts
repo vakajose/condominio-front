@@ -5,5 +5,7 @@
 
 export const environment = {
   production: false,
-  graphqlUrl: 'http://localhost:8080/graphql'
+  graphqlUrl: 'http://localhost:8080/graphql',
+  restApiUrl: 'http://localhost:8080/api',
+  restApiVersion: '/v1'
 };
